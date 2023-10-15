@@ -1,0 +1,210 @@
+.bg-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #8c91a1;
+
+    .ev-dashboard {
+        width: 80%;
+        height: 86%;
+        background-color: #5f6d9c;
+
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        padding: 5px 20px;
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 10%;
+            /* border: 1px solid #fff; */
+            /* padding: 0 20px; */
+            gap: 10px;
+
+            .app-icon-box {
+                /* border: 1px solid red;?\ */
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 15px;
+                width: 25%;
+
+                .app-icon {
+                    width: 65px;
+                    height: 55px;
+                    margin: 0;
+                    margin-top: 5px;
+                }
+
+                .app-name {
+                    background-image: linear-gradient(to right, #64dc86, rgb(231, 231, 84));
+                    color: transparent;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    font-size: 25px;
+                    font-weight: 500;
+                }
+            }
+
+            .menu-bar {
+                /* border: 1px solid red; */
+                width: 50%;
+            }
+
+            .profile-box {
+                width: 25%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 20px;
+                /* border: 1px solid red; */
+
+                .user-name {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #fff;
+                }
+            }
+        }
+
+        .ev-spec-ev-type-box {
+            background-color: #6d7697;
+            height: 80%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+
+            .ev-spec-box {
+                width: 53%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                /* gap: 20px; */
+
+                .ev-spec-row {
+                    height: 45%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-around;
+                    /* gap: 10px; */
+                    /* background-color: #8d919e; */
+
+                    .ev-spec {
+                        background-color: #8d919e;
+                        padding: 10px;
+                        border-radius: 5px;
+                        width: 46%;
+                        height: 100%;
+
+                        .ev-spec-name {
+                            color: #fff;
+                            font-weight: 500;
+                        }
+
+                        .ev-spec-icon-details-box {
+                            /* border: 1px solid red; */
+                            margin-top: 10px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 10px;
+
+                            .ev-spec-icon {
+                                font-size: 150px;
+                                margin: 0;
+                                color: red;
+                            }
+                        }
+
+                        .ev-spev-details-box {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            .ev-spec-details-item {
+                                display: flex;
+                                flex-direction: column;
+                                color: #dbdfe7;
+
+                                .ev-spec-details-item-label {
+                                    margin: 0;
+                                    font-size: 18px;
+                                    line-height: 14px;
+                                }
+
+                                .ev-spec-details-item-desc {
+                                    margin: 0;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ev-type-box {
+                background-color: #8d919e;
+                width: 45%;
+                height: 95%;
+                border-radius: 5px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+
+                .ev-text {
+                    font-size: 30px;
+                    font-weight: 500;
+                    color: #fff;
+                }
+
+                .ev-image {
+                    width: 70%;
+                    margin: 0;
+                    align-self: center;
+                }
+
+                .ev-owner-details-box {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    /* border: 1px solid red; */
+                    margin-top: 20px;
+                    padding-left: 15px;
+
+                    .ev-details-box {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .ev-details-item {
+                            color: #dbdfe7;
+                            .ev-details-item-desc {
+                                margin: 0;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                            .ev-details-item-label {
+                                margin: 0;
+                                font-size: 18px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

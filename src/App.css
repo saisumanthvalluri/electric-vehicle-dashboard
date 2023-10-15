@@ -1,0 +1,17 @@
+.App {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #1badb8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
