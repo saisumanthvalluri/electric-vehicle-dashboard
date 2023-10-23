@@ -4,14 +4,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #8c91a1;
+    /* background-color: #8c91a1; */
+    /* background-image: linear-gradient(#50f545, #fff); */
+    background-color: #85ffbd;
+    background-image: linear-gradient(45deg, #85ffbd 0%, rgb(235, 234, 216) 100%);
 
     .ev-dashboard {
         width: 80%;
         height: 86%;
         background-color: #5f6d9c;
 
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+        /* box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px; */
+        background-image: linear-gradient(45deg, #93a5cf, #e4efe9 100%);
         display: flex;
         flex-direction: column;
         gap: 5%;
@@ -58,13 +62,14 @@
             }
 
             .profile-box {
-                width: 25%;
+                /* width: 25%; */
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-end;
                 gap: 20px;
-                /* border: 1px solid red; */
+                border: 1px solid red;
+                cursor: pointer;
 
                 .user-name {
                     font-size: 18px;
@@ -102,7 +107,7 @@
                     /* background-color: #8d919e; */
 
                     .ev-spec {
-                        background-color: #8d919e;
+                        background-color: #a2a5af;
                         padding: 10px;
                         border-radius: 5px;
                         width: 46%;

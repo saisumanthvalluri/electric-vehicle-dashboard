@@ -9,16 +9,27 @@ import { PiThermometerHotFill } from "react-icons/pi";
 import { TbCircuitVoltmeter } from "react-icons/tb";
 import car from "../../IMG/sampleCar.png";
 import bike from "../../IMG/sampleBike.png";
-import { db } from "../../firebase-config";
+import { auth, db } from "../../firebase-config";
 import { useEffect, useState } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
+import { signOut } from "firebase/auth";
 
 const EvDashboard = () => {
+    const navigate = useNavigate();
     // const [batteryPercentage, setBatteryPercentage] = useState(50);
     const [tab, setTab] = useState(0);
     const [userData, setUserData] = useState({});
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
     useEffect(() => {
+        const jwtToken = Cookies.get("jwt_token");
+        if (jwtToken === undefined) {
+            return navigate("/sign-in", { replace: true });
+        }
         const userInfo = JSON.parse(localStorage.getItem("user_info"));
         if (userInfo) {
             const unsubuserData = onSnapshot(collection(db, `users`), (snapshot) => {
@@ -33,7 +44,7 @@ const EvDashboard = () => {
                 unsubuserData();
             };
         }
-    }, []);
+    }, [navigate]);
 
     const TabChange = (event, value) => {
         setTab(value);
@@ -68,6 +79,13 @@ const EvDashboard = () => {
         },
     }));
 
+    const onLogout = async () => {
+        Cookies.remove("jwt_token");
+        localStorage.removeItem("user_info");
+        await signOut(auth);
+        navigate("/sign-in", { replace: true });
+    };
+
     return (
         <div className="bg-container">
             <div className="ev-dashboard">
@@ -83,10 +101,19 @@ const EvDashboard = () => {
                             <StyledTab label="Media" />
                         </StyledTabs>
                     </div>
-                    <div className="profile-box">
+                    <div className="profile-box" onClick={() => setDrawerOpen(true)}>
                         <h3 className="user-name">{userData?.userName}</h3>
                         <Avatar sx={{ bgcolor: "blue" }}>S</Avatar>
                     </div>
+                    <Drawer
+                        open={drawerOpen}
+                        onClose={() => setDrawerOpen(false)}
+                        direction="right"
+                        style={{ width: "400px", cursor: "default" }}
+                        className="profile-drawer-box">
+                        <div>Hello World</div>
+                        <button onClick={onLogout}>Logout</button>
+                    </Drawer>
                 </nav>
 
                 <div className="ev-spec-ev-type-box">
